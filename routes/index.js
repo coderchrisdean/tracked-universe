@@ -1,6 +1,5 @@
 const router = require('express').Router(); // router for express
 const { getAllUsers, getUserById, createUser, updateUser, deleteUser, addFriend, deleteFriend } = require('../controllers/user-controller');
-const { getAllThoughts, getThoughtById, createThought, updateThought, deleteThought, addReaction, deleteReaction } = require('../controllers/thought-controller');
 
 //api routes
 
