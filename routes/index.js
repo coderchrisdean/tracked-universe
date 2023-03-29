@@ -18,19 +18,7 @@ router.route('/api/users/:userId/friends/:friendId')
     .delete(deleteFriend); // remove a friend from a user's friends list
 
 
-//thought routes
-router.route('/api/thoughts')
-    .get(getAllThoughts) //get all thoughts
-    .post(createThought); //post new thought
 
-router.route('/thoughts/:thoughtId')
-    .get(getThoughtById) // get thought by Id
-    .put(updateThought) //update thought by Id
-    .delete(deleteThought); //remove thought by Id
-
-router.route('/thoughts/:thoughtId/reactions')
-    .post(addReaction)  //create reaction stored in a single thoughts reactions array
-    .delete(deleteReaction); // pull and remove reaction by reactions reactionId value
 
 module.exports = router;
 
