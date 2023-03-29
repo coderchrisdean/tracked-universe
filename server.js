@@ -20,7 +20,7 @@ mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/tracked-univers
 
 // use routes
 
-app.use(require('.routes'));
+app.use(require('./routes'));
 
 // server start
 
