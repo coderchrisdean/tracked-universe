@@ -1,4 +1,5 @@
-const { Thought, User } = require("../models");
+const { Thought } = require("../models/Thought");
+const { User } = require("../models/User");
 
 const thoughtController = {
   // get all thoughts
@@ -27,6 +28,7 @@ const thoughtController = {
             .status(404)
             .json({ message: "No thought found with this id!" });
         }
+        res.json(thoughtData); 
       })
       .catch((err) => {
         console.error(err);
@@ -120,4 +122,32 @@ const thoughtController = {
         res.status(500).json(err);
       });
   },
+  
+// remove reaction by reactionId
+deleteReaction({ params }, res) {
+    Thought.findOneAndUpdate(
+      { _id: params.thoughtId },
+      { $pull: { reactions: { reactionId: params.reactionId } } },
+      { new: true }
+    )
+      .populate({
+        path: "reactions",
+      })
+      .then((thoughtData) => {
+        if (!thoughtData) {
+          return res
+            .status(404)
+            .json({ message: "No thought found with this id!" });
+        }
+        res.json(thoughtData);
+      })
+      .catch((err) => {
+        console.error(err);
+        res.status(500).json(err);
+      });
+  },
 };
+
+
+
+module.exports = thoughtController;

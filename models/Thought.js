@@ -10,12 +10,12 @@ const thoughtSchema = new Schema(
         reactions: [reactionSchema], //array of nested arrays with reactionSchema
     },
     {
-        toJSON: { virtuals: true, getters: true },
+        toJSON: { virtual: true, getters: true },
         id: false // no id 
     }
 );
 
-thoughtSchema.virtuals('reactionCount').get(function () {
+thoughtSchema.virtual('reactionCount').get(function () {
     return this.reactions.length;
 })
 
