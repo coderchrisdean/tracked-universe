@@ -15,11 +15,8 @@ const seed = [
 
 ];
 
-
-const mongodb = 'mongodb://127.0.0.1:27018/socialmediaDB';
-
 mongoose
-  .connect(mongodb, {
+  .connection(process.env.MONGODB_URI || 'mongodb://localhost/socialmediaDB', {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })
