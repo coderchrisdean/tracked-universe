@@ -1,3 +1,4 @@
+
 const mongoose = require('mongoose');
 const User = require('../models/User');
 
@@ -16,9 +17,9 @@ const seed = [
 ];
 
 mongoose
-  .connection(process.env.MONGODB_URI || 'mongodb://localhost/socialmediaDB', {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
+  .connect(process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017/socialmediaDB', {
+    useNewUrlParser: false,
+    useUnifiedTopology: false,
   })
   .then(() => {
     console.log('Connected to MongoDB...');
