@@ -3,12 +3,12 @@ const User = require('../models/User');
 
 const seed = [
   {
-    name: 'John Doe',
+    username: 'coderchrisdean',
     email: 'john.doe@example.com',
     age: 30,
   },
   {
-    name: 'Jane Smith',
+    username: 'coderjanesmith',
     email: 'jane.smith@example.com',
     age: 29,
   },
@@ -16,7 +16,7 @@ const seed = [
 ];
 
 
-const mongodb = 'mongodb://localhost:27017/socialmediaDB';
+const mongodb = 'mongodb://127.0.0.1:27018/socialmediaDB';
 
 mongoose
   .connect(mongodb, {
