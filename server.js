@@ -1,5 +1,5 @@
 const express = require('express');
-const mongoose = require('mongoose');
+const db = require('./config/connection')
 const routes = require('./routes');
 
 //initialize express app
@@ -7,20 +7,16 @@ const app = express();
 const PORT = process.env.PORT || 3002;
 
 // middleware
-app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-
+app.use(express.json());
 // Use routes
 app.use(routes);
 
 // mongoose configuration
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://127.0.0.1:27018/socialmediaDB', {
-  useNewUrlParser: true,
-  useUnifiedTopology: true
-});
-
-
+db.once('open', () => {
+  
 // server start
 app.listen(PORT, () => {
   console.log(`server started on port ${PORT}`);
+  });
 });
