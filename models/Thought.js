@@ -2,6 +2,7 @@ const { Schema, model } = require('mongoose');
 const moment = require('moment');
 const reactionSchema = require('./Reaction');
 
+
 const thoughtSchema = new Schema(
     { 
         thoughtText: { type: String, required: true, minlength: 1, maxlength: 280 }, //min 1 max 280 characters

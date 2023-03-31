@@ -1,4 +1,4 @@
-const { Schema } = require('mongoose'); //import Schema from mongoose
+const { Schema, Types } = require('mongoose'); //import Schema from mongoose
 const moment = require('moment');  // package to format dates and time
 
 const reactionSchema = new Schema(

@@ -1,9 +1,9 @@
-const { User } = require("../models/User");
+const User  = require("../models/User");
 
 module.exports = {
   // get all users
   getAllUsers(req, res) {
-    User.find({})
+    User.find()
       .populate({
         path: "thoughts",
       })
