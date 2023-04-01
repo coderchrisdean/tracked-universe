@@ -31,7 +31,8 @@ To use this application, run the following command:
 
 ## Video
 
-[Video of the application]
+https://drive.google.com/file/d/1t3IhLusrD8ovGpQWd_BMEU6fQocX_DNR/view
+
 
 ## Questions
 
