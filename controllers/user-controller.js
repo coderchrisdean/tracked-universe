@@ -56,18 +56,18 @@ module.exports = {
       .catch((err) => res.status(500).json(err));
   },
 
-  // delete a user by id
-  deleteUser({ params }, res) {
-    User.findOneAndDelete({ _id: params.id })
-      .then((dbUserData) => {
-        if (!dbUserData) {
-          res.status(404).json({ message: "No user found with this id!" });
-          return;
-        }
-        res.json(dbUserData);
-      })
-      .catch((err) => res.json(err));
-  },
+// delete a user by id
+deleteUser(req, res) {
+  User.findOneAndDelete({ _id: req.params.id })
+    .then((dbUserData) => {
+      if (!dbUserData) {
+        res.status(404).json({ message: "No user found with this id!" });
+        return;
+      }
+      res.json({ message: "User deleted successfully!" });
+    })
+    .catch((err) => res.json(err));
+},
 
   // add a friend to friend array
   addFriend(req, res) {
@@ -90,10 +90,10 @@ module.exports = {
   },
 
   // remove a friend from user
-  deleteFriend({ params }, res) {
+  deleteFriend(req, res) {
     User.findOneAndUpdate(
-      { _id: params.userId },
-      { $pull: { friends: req.body.friendId } },
+      { _id: req.params.userId },
+      { $pull: { friends: req.params.friendId } },
       { new: true }
     )
       .populate({
@@ -107,5 +107,6 @@ module.exports = {
         res.json(user);
       })
       .catch((err) => res.status(500).json(err));
-  },
+  }
+  
 };
