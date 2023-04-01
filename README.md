@@ -2,7 +2,7 @@
 
 ## Description
 
-This is a NoSQL API for a social network web application where users can share their thoughts, react to friends’ thoughts, and create a friend list. This application uses Express.js for routing, a MongoDB database, and the Mongoose ODM.  It is tested using Insomnia Core.
+This is a NoSQL API for a social network web application where users can share their thoughts, react to friends’ thoughts, and create a friend list. This application uses Express.js for routing, a MongoDB database, and the Mongoose ODM.  It is tested using Insomnia Core. My base code was sourced from module activities and the provided by the University of Berkeley Extension Coding Bootcamp.
 
 ## Table of Contents
 
@@ -12,6 +12,7 @@ This is a NoSQL API for a social network web application where users can share t
 * [Video](#video)
 * [Questions](#questions)
 * [Link to Repository](#link-to-repository)
+* [Source Code](#source-code)
 
 ## Installation
 
@@ -41,3 +42,7 @@ If you have any questions, feel free to reach out to me at coderchrisdean@gmail.
 ## Link to Repository
 
 https://github.com/coderchrisdean/tracked-universe
+
+## Source Code
+
+My base code was sourced from module activities and the provided by the University of Berkeley Extension Coding Bootcamp.
